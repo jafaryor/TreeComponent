@@ -15,21 +15,21 @@ export class NodeComponent implements OnDestroy {
     constructor() {}
 
     toggle() {
-      this.showChildren = !this.showChildren;
+        this.showChildren = !this.showChildren;
     }
 
     removeNode(event?: TreeModel) {
-      if(event) event.removed = true;
-      else this.remove.emit(this.nodes);
+        if(event) this.nodes.children.splice(this.nodes.children.indexOf(event), 1);
+        else this.remove.emit(this.nodes);
     }
 
     ngOnDestroy() {
-      for (var key in this) {
-        if (this.hasOwnProperty(key)) {
-          this[key] = null;
-          delete this[key];
+        for (var key in this) {
+            if (this.hasOwnProperty(key)) {
+                this[key] = null;
+                delete this[key];
+            }
         }
-      }
     }
 
 }

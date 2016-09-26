@@ -1,7 +1,7 @@
 <li *ngIf="nodes.title" class="list-group-item"
-    [class.list-group-item-info]="nodes.children"
+    [class.list-group-item-info]="nodes.children && nodes.children.length>0"
     (click)="toggle()">
-  <i *ngIf="nodes.children"
+  <i *ngIf="nodes.children && nodes.children.length>0"
      class="fa fa-angle-right fa-fw"
      [ngClass]="{'fa-angle-right': !showChildren, 'fa-angle-down': showChildren}"
      aria-hidden="true"></i>
@@ -11,9 +11,9 @@
   </span>
 </li>
 
-<div *ngIf="showChildren && nodes.children">
+<div *ngIf="showChildren && nodes.children && nodes.children.length>0">
   <div *ngFor="let node of nodes.children; let i=index" class="has-children">
-    <node *ngIf="!node.removed" [nodes]="node" (remove)="removeNode($event)"></node>
+    <node [nodes]="node" (remove)="removeNode($event)"></node>
   </div>
 </div>
 

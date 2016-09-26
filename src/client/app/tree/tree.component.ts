@@ -1,4 +1,4 @@
-import {Component, OnDestroy, Input, OnInit} from '@angular/core';
+import {Component, OnDestroy, Input} from '@angular/core';
 import {TreeModel} from "../shared/tree-model/tree-model";
 
 /**
@@ -21,7 +21,7 @@ export class TreeComponent implements OnDestroy {
   constructor() {}
 
   removeNode(node: TreeModel) {
-    node.removed = true;
+    this.tree.splice(this.tree.indexOf(node), 1);
   }
 
   ngOnDestroy() {
