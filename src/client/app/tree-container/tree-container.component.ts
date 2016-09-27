@@ -33,7 +33,9 @@ export class TreeContainerComponent implements OnInit, OnDestroy {
                       children: [
                         { title: "2 Jan" },
                         { title: "3 Jan" },
-                        { title: "4 Jan" }
+                        { title: "2 Jan" },
+                        { title: "4 Jan" },
+                        { title: "2 Jan" },
                       ]
                     },
                     { title: "16 Jan" }
