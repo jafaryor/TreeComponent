@@ -1,6 +1,7 @@
 <a *ngIf="node.title"
    class="list-group-item border"
    [class.selected]="showChildren"
+   [class.bold]="showChildren"
    [style.padding-left.px]="level*30+10"
    (click)="toggle()">
     <i *ngIf="node.children && node.children.length>0"
@@ -17,8 +18,10 @@
 </a>
 
 <div *ngIf="showChildren">
-  <div *ngFor="let node of node.children">
-    <node [node]="node" [level]="level+1" (remove)="removeNode($event)"></node>
-  </div>
+    <node *ngFor="let node of node.children"
+          [node]="node"
+          [level]="level+1"
+          (remove)="removeNode($event)">
+    </node>
 </div>
 

@@ -1,11 +1,15 @@
 <ul class="nav nav-tabs">
-  <li class="active"><a style="color: #28739e" data-toggle="tab">Current Filter</a></li>
+  <li class="active bold"><a id="filter">Current Filter</a></li>
 </ul>
 
 <div class="tab-content">
   <div class="tab-pane custom-pane active">
     <div class="list-group no-margin">
-      <node *ngFor="let node of tree" [node]="node" [level]="0" (remove)="removeNode($event)"></node>
+      <node *ngFor="let node of tree"
+            [node]="node"
+            [level]="0"
+            (remove)="removeNode($event)">
+      </node>
       <div class="blank"></div>
       <a class="list-group-item centered selected blue pointer" (click)="clearAll()">Clear All</a>
     </div>

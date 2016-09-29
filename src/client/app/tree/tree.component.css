@@ -35,3 +35,11 @@
 .no-margin {
   margin: 0;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+#filter {
+  color: #28739e;
+}

@@ -13,3 +13,7 @@
 .border {
   border-bottom: none;
 }
+
+.bold {
+  font-weight: bold;
+}
