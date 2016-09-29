@@ -1,19 +1,22 @@
-<li *ngIf="nodes.title" class="list-group-item"
-    [class.list-group-item-info]="nodes.children && nodes.children.length>0"
-    (click)="toggle()">
-  <i *ngIf="nodes.children && nodes.children.length>0"
-     class="fa fa-angle-right fa-fw"
-     [ngClass]="{'fa-angle-right': !showChildren, 'fa-angle-down': showChildren}"
-     aria-hidden="true"></i>
-  {{nodes.title}}
-  <span class="pull-right" (click)="removeNode()">
-    <i class="fa fa-times fa-fw"></i>
-  </span>
-</li>
+<a *ngIf="node.title"
+   class="list-group-item"
+   [class.selected]="showChildren && node.children"
+   [style.padding-left.px]="level*30+10"
+   (click)="toggle()">
+    <i *ngIf="node.children && node.children.length>0"
+       class="fa fa-angle-right fa-fw"
+       [ngClass]="{'fa-angle-right': !showChildren, 'fa-angle-down': showChildren}"
+       aria-hidden="true">
+    </i>
+    {{node.title}}
+    <span class="pull-right" (click)="removeNode()">
+      <i class="fa fa-times fa-fw"></i>
+    </span>
+</a>
 
-<div *ngIf="showChildren && nodes.children && nodes.children.length>0">
-  <div *ngFor="let node of nodes.children; let i=index" class="has-children">
-    <node [nodes]="node" (remove)="removeNode($event)"></node>
+<div *ngIf="showChildren && node.children && node.children.length>0">
+  <div *ngFor="let node of node.children">
+    <node [node]="node" [level]="level+1" (remove)="removeNode($event)"></node>
   </div>
 </div>
 

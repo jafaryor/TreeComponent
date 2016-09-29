@@ -1,4 +1,4 @@
-import {Component, OnDestroy, Input} from '@angular/core';
+import {Component, OnDestroy, Input, AfterViewInit} from '@angular/core';
 import {TreeModel} from "../shared/tree-model/tree-model";
 
 /**
@@ -11,7 +11,7 @@ import {TreeModel} from "../shared/tree-model/tree-model";
   styleUrls: ['tree.component.css'],
 })
 
-export class TreeComponent implements OnDestroy {
+export class TreeComponent implements AfterViewInit, OnDestroy {
   @Input() tree: TreeModel[];
 
   /**
@@ -20,8 +20,19 @@ export class TreeComponent implements OnDestroy {
    */
   constructor() {}
 
+  ngAfterViewInit() {
+    this.tree = [{
+      title: 'Time',
+      children: this.tree
+    }]
+  }
+
   removeNode(node: TreeModel) {
     this.tree.splice(this.tree.indexOf(node), 1);
+  }
+
+  clearAll() {
+    this.tree = null;
   }
 
   ngOnDestroy() {

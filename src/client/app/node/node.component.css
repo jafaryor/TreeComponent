@@ -1,3 +1,7 @@
 .has-children {
   padding-left: 20px;
 }
+
+.selected {
+  background-color: #F5F5F5;
+}

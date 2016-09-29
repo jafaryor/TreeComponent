@@ -3,3 +3,16 @@
   padding: 10px;
 }
 
+.centered {
+  text-align: center;
+}
+
+.blank {
+  height: 50px;
+  border: 1px solid #DDDDDD;
+}
+
+.selected {
+  background-color: #F5F5F5;
+}
+

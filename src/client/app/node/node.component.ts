@@ -8,7 +8,8 @@ import {TreeModel} from "../shared/tree-model/tree-model";
     styleUrls: ['node.component.css']
 })
 export class NodeComponent implements OnDestroy {
-    @Input() nodes: TreeModel;
+    @Input() node: TreeModel;
+    @Input() level: number;
     @Output() remove: EventEmitter<TreeModel> = new EventEmitter<TreeModel>();
     showChildren: boolean = false;
 
@@ -19,8 +20,8 @@ export class NodeComponent implements OnDestroy {
     }
 
     removeNode(event?: TreeModel) {
-        if(event) this.nodes.children.splice(this.nodes.children.indexOf(event), 1);
-        else this.remove.emit(this.nodes);
+        if(event) this.node.children.splice(this.node.children.indexOf(event), 1);
+        else this.remove.emit(this.node);
     }
 
     ngOnDestroy() {

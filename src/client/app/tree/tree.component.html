@@ -2,10 +2,12 @@
   <div class="panel-heading">
     <h3 class="panel-title">Tree Component</h3>
   </div>
+
   <div class="panel-body">
-    <ul *ngFor="let node of tree; let i=index">
-      <node [nodes]="node" (remove)="removeNode($event)"></node>
-    </ul>
+    <div class="list-group">
+      <node *ngFor="let node of tree" [node]="node" [level]="0" (remove)="removeNode($event)"></node>
+      <div class="blank"></div>
+      <a class="list-group-item centered selected" (click)="clearAll()">Clear All</a>
+    </div>
   </div>
 </div>
-
