@@ -5,14 +5,20 @@
 
 .centered {
   text-align: center;
+  border-top: none;
 }
 
 .blank {
   height: 50px;
   border: 1px solid #DDDDDD;
+  border-bottom: none;
 }
 
 .selected {
   background-color: #F5F5F5;
+}
+
+.blue {
+  color: #28739e;
 }
 
