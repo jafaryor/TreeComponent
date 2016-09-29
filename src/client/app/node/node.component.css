@@ -5,3 +5,7 @@
 .selected {
   background-color: #F6F5FA;
 }
+
+.no-children {
+  padding-left: 25px;
+}
