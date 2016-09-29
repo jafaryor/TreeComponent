@@ -24,7 +24,7 @@ export class TreeComponent implements AfterViewInit, OnDestroy {
     this.tree = [{
       title: 'Time',
       children: this.tree
-    }]
+    }];
   }
 
   removeNode(node: TreeModel) {

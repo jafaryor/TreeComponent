@@ -9,3 +9,7 @@
 .no-children {
   padding-left: 25px;
 }
+
+.border {
+  border-bottom: none;
+}

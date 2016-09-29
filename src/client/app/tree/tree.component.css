@@ -22,3 +22,16 @@
   color: #28739e;
 }
 
+.custom-pane {
+  padding-top: 20px;
+  border: 1px solid #DDDDDD;
+  border-top: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.no-margin {
+  margin: 0;
+}
