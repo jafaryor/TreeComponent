@@ -16,7 +16,7 @@ export class NodeComponent implements OnDestroy {
     constructor() {}
 
     toggle() {
-        this.showChildren = !this.showChildren;
+        if(this.node.children && this.node.children.length>0) this.showChildren = !this.showChildren;
     }
 
     removeNode(event?: TreeModel) {
